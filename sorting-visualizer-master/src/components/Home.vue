@@ -71,14 +71,20 @@
 <script>
 export default {
   name: 'Home',
+
   data() {
     return {
+        a: [],
         array: [],
         isManipulatingArray: false,
+
         selectedAlgo: "1",
+
         number: "20",
         speed: "5",
+
         isSorting: false,
+
         styleObject: {
           height: "200px",
         },
@@ -90,20 +96,17 @@ export default {
     }
   },
   created() {
-      var n = this.number, i;
-      var a =[];
-      for(i = 1; i <= n; i++) {
-        a.push(i*100/n);
+      var n = this.number;
+      for(let i = 1; i <= 50; i++) {
+        this.a.push(i);
       }
-      this.array = a;
+      this.array = this.a.slice(0, n);
   },
   methods: {
       generate: function() {
-        this.array = [];
         var n = this.number;
-        for(var i = 1; i <= n; i++) {
-          this.array.push(i*100/n);
-        }
+        this.array = [];
+        this.array = this.a.slice(0, n);
       },
       
       sort: function (algo) {
@@ -112,17 +115,21 @@ export default {
         else if(algo=="2") this.selectionSort(this.array);
         else if(algo=="3") this.insertionSort(this.array);
       },
+
       sleep: function() {
         return new Promise(resolve => setTimeout(resolve, (100*5)/this.speed));
       },
+
       arraySetWithoutIndexes: async function(array, index, value) {
           array.splice(index, 1, value);
       },
+
       arraySwap: async function(array, indexA, indexB) {
         var x = array[indexA];
         this.arraySetWithoutIndexes(array, indexA, array[indexB]);
         this.arraySetWithoutIndexes(array, indexB, x);
       },
+
       shuffle: function() {
         this.isSorting = false;
         var a = this.array;
@@ -132,6 +139,7 @@ export default {
             this.arraySwap(a, i, j);
         }
       },
+
       bubbleSort: async function(a) {
         var len = a.length;
         for (var i = len - 1; i >= 0; i--) {
@@ -144,8 +152,10 @@ export default {
         }
         this.isSorting = false;
       },
+
       selectionSort: async function(a) {
         var minIdx, len = a.length;
+
         for (var i = 0; i < len; i++) {
             minIdx = i;
             for (var j = i + 1; j < len; j++) {
@@ -158,11 +168,14 @@ export default {
         }
         this.isSorting = false;
       },
+
       insertionSort: async function(a) {
         var i, len = a.length, el, j;
+
         for (i = 1; i < len; i++) {
             el = a[i];
             j = i;
+
             while (j > 0 && a[j - 1] > el) {
                 a[j] = a[j - 1];
                 j--;
