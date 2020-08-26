@@ -194,49 +194,49 @@ background: radial-gradient(circle, rgba(249,204,223,0.9356860900193118) 0%, rgb
     display: flex;
     position: relative;
     justify-content: center;
-    align-items: center;
 }
+
 .list-item {
     display: flex;
     position: relative;
     justify-items: center;
     align-items: center;
-    background-color: #e903d6;
+    
+    background: rgb(250,65,65);
+background: linear-gradient(90deg, rgba(250,65,65,0.9300681124912219) 50%, rgba(250,96,76,0.9132141799069522) 100%);
+
     padding: 1px;
-    width: 100%;
-    max-width: 30px;
-    border-radius: 25px;
+    width: 90%;
+    max-width: 25px;
+    border-radius: 7px;
     color: white;
-    height:50%;
-    margin: 2px;
-    bottom: -290px;
-    
-   
-   
-    
+    margin: 2.5px;
+
     &.active {
       background: #92cc6b;
     }
     &.swaping {
-      background: #c5fcd5;
+      background: #cc6b6b;
     }
     &.traversing {
       background: #ad6bcc;
     }
 }
+
 .list-animation-item {
     transition: all ease 0.5s;
 }
 .button-container {
-  margin-top: 30px;
   padding: 10px;
 }
 .button {
   margin: 5px 15px;
 }
+
 .button:hover {
-    background-color: #33cabb;
+    background-color: #019ad2;
 }
+
 .button:active {
     position: relative;
     top: 1px;
