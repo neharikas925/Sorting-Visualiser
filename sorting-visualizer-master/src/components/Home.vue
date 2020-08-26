@@ -177,24 +177,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
+
+
 .main{
-    width:1265px; /* The width is fixed by pixels */
-    height:800px;
-    background-color: #1fed89;
-    background-image: linear-gradient(160deg, #1fed89 0%, #12d6e7 50%, #341bdf 100%);
-;
+    width:100%;
+    height: 100%;
+    background: rgb(249,204,223);
+background: radial-gradient(circle, rgba(249,204,223,0.9356860900193118) 0%, rgba(148,187,233,1) 100%);
+    
 }
 .hello {
   margin: 10px;
-  overflow: hidden;
-  position: relative;
 }
+
 .array-to-be-sorted {
     display: flex;
     position: relative;
