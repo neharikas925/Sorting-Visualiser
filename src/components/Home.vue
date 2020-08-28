@@ -7,7 +7,7 @@
           <v-spacer></v-spacer>
           
           <v-row style="padding-top: 30px;">
-            <v-col cols="md">
+            <v-col cols="lg">
               <v-slider
                     color="black"
                     label="Number" v-model="number"
@@ -17,7 +17,7 @@
                     @change="generate">
               </v-slider>
               </v-col>
-              <v-col cols="md">
+              <v-col cols="lg">
               <v-slider
                         color="black"
                         label="Speed" v-model="speed"
@@ -26,18 +26,10 @@
                         min="1" max="10">
               </v-slider></v-col>
           </v-row>
+          <v-spacer></v-spacer>
           
 
-          <div class="button-container">
-
-              <v-btn small  rounded  class="button white--text" color="black"
-                      v-on:click="shuffle" 
-                      :disabled="isSorting" >Shuffle!</v-btn>
-              <v-btn small  rounded  class="button white--text" color="black"
-                      v-on:click="sort(selectedAlgo)" 
-                      :disabled="isSorting">Sort!</v-btn>
-                      
-          </div>
+         
           
 
             <v-select :items="sortAlgorithms" 
@@ -50,6 +42,16 @@
             </v-select>
           
         </v-app-bar>
+       <div class="button-container">
+
+              <v-btn small  rounded  class="button black--text" color="white"
+                      v-on:click="shuffle" 
+                      :disabled="isSorting" >Shuffle</v-btn>
+              <v-btn small  rounded  class="button black--text" color="white"
+                      v-on:click="sort(selectedAlgo)" 
+                      :disabled="isSorting">Sort</v-btn>
+                      
+        </div>
     
 
     <div class="hello">
@@ -58,7 +60,7 @@
 
             <div v-for="num in array" v-bind:key="num" 
                     v-bind:class="['list-animation-item', 'list-item' ]"
-                        v-bind:style="{ height: 4.8*num*100/number + 'px' }">
+                        v-bind:style="{ height: 4.5*num*100/number + 'px' }">
             </div>
             
         </transition-group>
@@ -203,7 +205,11 @@ export default {
 .hello {
   margin: 10px;
 }
-
+.button-container{
+display: flex;
+    position: relative;
+    justify-content: center;
+}
 .array-to-be-sorted {
     display: flex;
     position: relative;
@@ -218,11 +224,10 @@ export default {
     
     background: white;
     
-
     padding: 1px;
     width: 90%;
     max-width: 25px;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 4px 4px 10px 10px;
     color: white;
     margin: 2.5px;
 
