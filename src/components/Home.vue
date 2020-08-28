@@ -1,15 +1,15 @@
 <template>
   <div class="main">
 
-    <v-app-bar>
-        <v-toolbar-title style="font-size: 20px;" color="white">Sorting Algo Visualiser </v-toolbar-title>
+    <v-app-bar color="white">
+        <v-toolbar-title  style="font-size: 20px; " color="pink"><strong>Sorting Algo Visualiser</strong> </v-toolbar-title>
         
-
           <v-spacer></v-spacer>
           
           <v-row style="padding-top: 30px;">
             <v-col cols="md">
               <v-slider
+                    color="black"
                     label="Number" v-model="number"
                     :thumb-size="19" thumb-label="always" 
                     :disabled="isSorting"
@@ -19,6 +19,7 @@
               </v-col>
               <v-col cols="md">
               <v-slider
+                        color="black"
                         label="Speed" v-model="speed"
                         :thumb-size="19" thumb-label="always" 
                         tick-size= "20"
@@ -29,10 +30,10 @@
 
           <div class="button-container">
 
-              <v-btn small  rounded  class="button white--text" color="#33bdef"
+              <v-btn small  rounded  class="button white--text" color="black"
                       v-on:click="shuffle" 
                       :disabled="isSorting" >Shuffle!</v-btn>
-              <v-btn small  rounded  class="button white--text" color="#33bdef"
+              <v-btn small  rounded  class="button white--text" color="black"
                       v-on:click="sort(selectedAlgo)" 
                       :disabled="isSorting">Sort!</v-btn>
                       
@@ -195,10 +196,10 @@ export default {
 .main{
     width:100%;
     height: 100%;
-    background: rgb(249,204,223);
-background: radial-gradient(circle, rgba(249,204,223,0.9356860900193118) 0%, rgba(148,187,233,1) 100%);
+    background-color: black;
     
 }
+
 .hello {
   margin: 10px;
 }
@@ -215,13 +216,13 @@ background: radial-gradient(circle, rgba(249,204,223,0.9356860900193118) 0%, rgb
     justify-items: center;
     align-items: center;
     
-    background: rgb(250,65,65);
-background: linear-gradient(90deg, rgba(250,65,65,0.9300681124912219) 50%, rgba(250,96,76,0.9132141799069522) 100%);
+    background: white;
+    
 
     padding: 1px;
     width: 90%;
     max-width: 25px;
-    border-radius: 7px;
+    border-radius: 0px 0px 10px 10px;
     color: white;
     margin: 2.5px;
 
@@ -247,7 +248,7 @@ background: linear-gradient(90deg, rgba(250,65,65,0.9300681124912219) 50%, rgba(
 }
 
 .button:hover {
-    background-color: #019ad2;
+    background-color: black;
 }
 
 .button:active {
